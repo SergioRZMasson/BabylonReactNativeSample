@@ -11,7 +11,7 @@ using namespace xaml::Controls;
 using namespace xaml::Navigation;
 
 using namespace Windows::ApplicationModel;
-namespace winrt::babylonreactnativesample::implementation
+namespace winrt::BabylonReactNativeSample::implementation
 {
 /// <summary>
 /// Initializes the singleton application object.  This is the first line of
@@ -26,7 +26,7 @@ App::App() noexcept
     InstanceSettings().UseFastRefresh(false);
 #else
     JavaScriptBundleFile(L"index");
-    InstanceSettings().UseWebDebugger(true);
+    InstanceSettings().UseWebDebugger(false);
     InstanceSettings().UseFastRefresh(true);
 #endif
 
@@ -90,4 +90,4 @@ void App::OnNavigationFailed(IInspectable const&, NavigationFailedEventArgs cons
     throw hresult_error(E_FAIL, hstring(L"Failed to load Page ") + e.SourcePageType().Name);
 }
 
-} // namespace winrt::babylonreactnativesample::implementation
+} // namespace winrt::BabylonReactNativeSample::implementation
